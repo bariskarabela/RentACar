@@ -8,7 +8,7 @@ namespace Core.Utilities.Helpers.Senders.SenderTemplates
 {
     public static class SmtpConstants
     {
-        public static string fromAddress = "ilkerylmaz.y@gmail.com";
+        public static string fromAddress = "bariskarabela10@gmail.com";
         public static string emailVerifySubject = "Email Doğrulaması";
     }
 }

@@ -72,7 +72,7 @@ namespace Business.Concrete
         }
         [SecuredOperation("admin,moderator")]
         [CacheRemoveAspect("ICarService.Get")]
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
@@ -80,7 +80,7 @@ namespace Business.Concrete
         }
         [CacheRemoveAspect("ICarService.Get")]
         [ValidationAspect(typeof(CarValidator))]
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Update(Car car)
         {
             _carDal.Update(car);

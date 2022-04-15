@@ -23,7 +23,7 @@ namespace Business.Concrete
         {
             _colorDal = colorDal;
         }
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color color)
         {
@@ -35,14 +35,14 @@ namespace Business.Concrete
             _colorDal.Add(color);
             return new SuccessResult(ColorConstants.ColorAdded);
         }
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
 
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
             return new SuccessResult(ColorConstants.ColorDeleted);
         }
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Update(Color color)
         {

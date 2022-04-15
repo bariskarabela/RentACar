@@ -23,7 +23,7 @@ namespace Business.Concrete
             _carService = carService;
         }
         [ValidationAspect(typeof(BrandValidator))]
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Add(Brand brand)
         {
             var result = BusinessRules.Run(CheckBrandCountIfGreaterThen5(),CheckBrandNameExists(brand.Name));
@@ -41,7 +41,7 @@ namespace Business.Concrete
             return new SuccessResult(BrandConstants.BrandDeleted);
         }
         [ValidationAspect(typeof(BrandValidator))]
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Update(Brand brand)
         {
             _brandDal.Update(brand);

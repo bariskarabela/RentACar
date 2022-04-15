@@ -34,7 +34,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Customer>(_customerDal.Get(c=>c.Id==id),CustomerConstants.CustomerGettedById);
         }
         [ValidationAspect(typeof(CustomerValidator))]
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Add(Customer customer)
         {
             var result = BusinessRules.Run(CheckIfCustomerExist(customer.UserId));
@@ -45,13 +45,13 @@ namespace Business.Concrete
             _customerDal.Add(customer);
             return new SuccessResult(CustomerConstants.CustomerAdded);
         }
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);
             return new SuccessResult(CustomerConstants.CustomerDeleted);
         }
-        [ValidationAspect(typeof(CustomerValidator))]
+        //[ValidationAspect(typeof(CustomerValidator))]
         [SecuredOperation("admin,moderator")]
         public IResult Update(Customer customer)
         {

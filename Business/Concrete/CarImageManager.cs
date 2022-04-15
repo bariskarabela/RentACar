@@ -46,14 +46,14 @@ namespace Business.Concrete
             return new SuccessResult(CarImageConstants.CarImagesAdded);
         }
         [ValidationAspect(typeof(CarImageValidator))]
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Update(IFormFile file, CarImage carImage)
         {
             FileHelper.Update(file, PathConstants.ImagesPath + carImage.ImagePath, PathConstants.ImagesPath);
             _carImageDal.Update(carImage);
             return new SuccessResult(CarImageConstants.CarImagesUpdated);
         }
-        [SecuredOperation("admin,moderator")]
+        //[SecuredOperation("admin,moderator")]
         public IResult Delete(CarImage carImage)
         
         {
